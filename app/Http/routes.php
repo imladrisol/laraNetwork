@@ -11,6 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', [
+    'uses' => '\Chatty\Http\Controllers\HomeController@index',
+    'as' => 'home'
+]);
+
+Route::get('/alert', function(){
+    return redirect()->route('home')->with('info', 'You signed!');
 });
