@@ -2,7 +2,7 @@
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-            <a class="navbar-brand" href="#">My Network</a>
+            <a class="navbar-brand" href="{{ route('home') }}">My Network</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -23,10 +23,10 @@
                 <!-- @if(Auth::check()) -->
                 <li><a href="#">Dayle<!-- {{Auth::user()->getNameOrUsername()}} --></a></li>
                 <li><a href="#">Update profile</a></li>
-                <li><a href="#">Sign out</a></li>
+                <li><a href="{{ route('auth.signout') }}">Sign out</a></li>
                 <!-- @else -->
-                <li><a href="#">Sign up</a></li>
-                <li><a href="#">Sign in</a></li>
+                <li><a href="{{ route('auth.signup') }}">Sign up</a></li>
+                <li><a href="{{ route('auth.signin') }}">Sign in</a></li>
                 <!-- @endif -->
             </ul>
         </div><!-- /.navbar-collapse -->
