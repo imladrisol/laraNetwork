@@ -7,7 +7,7 @@
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" >
-            <!-- @if(Auth::check())-->
+            @if(Auth::check())
             <ul class="nav navbar-nav">
                 <li><a href="#">Timeline</a></li>
                 <li><a href="#">Friends</a></li>
@@ -18,16 +18,16 @@
                 </div>
                 <button type="submit" class="btn btn-default">Submit</button>
             </form>
-            <!-- @endif -->
+            @endif
             <ul class="nav navbar-nav navbar-right">
-                <!-- @if(Auth::check()) -->
-                <li><a href="#">Dayle<!-- {{Auth::user()->getNameOrUsername()}} --></a></li>
+                @if(Auth::check())
+                <li><a href="#">{{Auth::user()->getNameOrUsername()}}</a></li>
                 <li><a href="#">Update profile</a></li>
                 <li><a href="{{ route('auth.signout') }}">Sign out</a></li>
-                <!-- @else -->
+                @else
                 <li><a href="{{ route('auth.signup') }}">Sign up</a></li>
                 <li><a href="{{ route('auth.signin') }}">Sign in</a></li>
-                <!-- @endif -->
+                 @endif
             </ul>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->

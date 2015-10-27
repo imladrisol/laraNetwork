@@ -44,3 +44,7 @@ Route::get('/signin', [
     'uses' => '\Chatty\Http\Controllers\AuthControler@getSignin',
     'as' => 'auth.signin',
 ]);
+
+Route::post('/signin', [
+    'uses' => '\Chatty\Http\Controllers\AuthControler@postSignin',
+]);
