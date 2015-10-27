@@ -12,9 +12,9 @@
                 <li><a href="#">Timeline</a></li>
                 <li><a href="#">Friends</a></li>
             </ul>
-            <form class="navbar-form navbar-left" role="search" action="#">
+            <form class="navbar-form navbar-left" role="search" action="{{ route('search.results') }}">
                 <div class="form-group">
-                    <input type="text" class="form-control" name="query" placeholder="Find people">
+                    <input type="text" class="form-control" name="query" placeholder="Find people" value="{{Request::old('query')}}">
                 </div>
                 <button type="submit" class="btn btn-default">Submit</button>
             </form>

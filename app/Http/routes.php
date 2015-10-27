@@ -53,3 +53,12 @@ Route::post('/signin', [
     'uses' => '\Chatty\Http\Controllers\AuthControler@postSignin',
     'middleware' => ['guest']
 ]);
+
+/**
+ * Search
+ */
+
+Route::get('/search', [
+    'uses' => '\Chatty\Http\Controllers\SearchController@getResults',
+    'as' => 'search.results',
+]);
