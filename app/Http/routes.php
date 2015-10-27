@@ -24,9 +24,11 @@ Route::get('/', [
 Route::get('/signup', [
     'uses' => '\Chatty\Http\Controllers\AuthControler@getSignup',
     'as' => 'auth.signup',
+    'middleware' => ['guest']
 ]);
 Route::post('/signup', [
     'uses' => '\Chatty\Http\Controllers\AuthControler@postSignup',
+    'middleware' => ['guest']
 ]);
 
 /**
@@ -35,6 +37,7 @@ Route::post('/signup', [
 Route::get('/signout', [
     'uses' => '\Chatty\Http\Controllers\AuthControler@getSignout',
     'as' => 'auth.signout',
+
 ]);
 
 /**
@@ -43,8 +46,10 @@ Route::get('/signout', [
 Route::get('/signin', [
     'uses' => '\Chatty\Http\Controllers\AuthControler@getSignin',
     'as' => 'auth.signin',
+    'middleware' => ['guest']
 ]);
 
 Route::post('/signin', [
     'uses' => '\Chatty\Http\Controllers\AuthControler@postSignin',
+    'middleware' => ['guest']
 ]);
